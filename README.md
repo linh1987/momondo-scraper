@@ -1,3 +1,6 @@
+# What is it
+- A simple Momondo ticket price scraper using Nightmare
+
 # How to run it 
 - npm i 
 - Fill your desire arrival dates, from and to airport combinations with deviation amount to search.
