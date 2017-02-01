@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Damn Son!</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script type="text/javascript" src="reactable.js"></script>
+    <script type="text/javascript">
+        var Table = Reactable.Table;
+
+        fetch(`data.json`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                ReactDOM.render(
+                    React.createElement(Table, {
+                        sortable: [
+                            {
+                                column: 'totalPrice',
+                                sortFunction: function (a, b) {
+                                    // Sort by last name
+                                    var priceA = parseInt(a.split(' ')[0].replace('.', ''));
+                                    var priceB = parseInt(b.split(' ')[0].replace('.', ''));
+
+                                    return priceA < priceB ? -1 : (priceA > priceB ? 1 : 0);
+                                }
+                            }
+                        ],
+                        data: data.results.filter(m => m.arrival.indexOf('04-2017') !== -1)
+                    }, null),
+                    document.getElementById('app')
+                );
+            })
+
+    </script>
+</body>
+
+</html>

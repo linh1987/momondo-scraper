@@ -1,0 +1,24 @@
+{
+  "name": "momondo-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "jsonfile": "^2.4.0",
+    "moment": "^2.17.1",
+    "nightmare": "^2.9.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "http-server": "^0.9.0"
+  }
+}
